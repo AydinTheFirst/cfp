@@ -35,10 +35,8 @@
 						src="https://cdn.discordapp.com/attachments/1102803386283343892/1104839152085782548/introduction_v2.mp4"
 						class="img-fluid rounded mx-auto"
 						style="max-height: 300px"
-						controls
-					></video>
+						controls></video>
 				</div>
-
 
 				<!-- Slider -->
 				<%- include("components/home/slider.ejs") %>
@@ -50,48 +48,9 @@
 
 				<!-- Row TextImg 1 -->
 				<%- include("components/home/text-img-two.ejs") %>
-
-				<!-- Row Details 1 -->
-				<%- include("components/home/details-one.ejs") %>
-
-				<!-- Row Details 2 -->
-				<%- include("components/home/details-two.ejs") %>
-
-				<!-- Row Details 3 -->
-				<%- include("components/home/details-three.ejs") %>
-
-				<!-- Row Details 4 -->
-				<%- include("components/home/details-four.ejs") %>
-
-				<!-- Row Details 5 -->
-				<%- include("components/home/details-five.ejs") %>
-
-				<!-- Row Details 6 -->
-				<%- include("components/home/details-six.ejs") %>
-
-				<hr>
-				<!-- Coaches Infos -->
-				<div class="row">
-
-				<!-- Coach 1 -->
-				<%- include("components/home/coach-one.ejs") %>
-
-				<!-- Coach 2 -->
-				<%- include("components/home/coach-two.ejs") %>
-				
-				<!-- Coach 3 -->
-				<%- include("components/home/coach-three.ejs") %>
-				
-				<!-- Coach 4 -->
-				<%- include("components/home/coach-four.ejs") %>
-				
-				<!-- Coach 5 -->
-				<%- include("components/home/coach-five.ejs") %>
-				
-				<!-- Coach 6 -->
-				<%- include("components/home/coach-six.ejs") %>
-				
-			    </div>
+				<!-- Details -->
+				<% detailsData.map((a) => {%> <%- include("components/home/details.ejs",
+				{d,i}) %> <% }) %>
 				<!-- Container End -->
 			</div>
 		</div>

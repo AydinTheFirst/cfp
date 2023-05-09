@@ -1,10 +1,10 @@
 import express from "express";
 import passport from "passport";
+import session from "express-session";
 
 // Local Imports
 import { config } from "./config.js";
 import { router } from "./routers/router.js";
-import session from "express-session";
 import { upload } from "./helpers/multer.js";
 
 const app = express();
