@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include("components/head.ejs") %>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body class="text-white">
+		<%- include("components/navbar.ejs") %>
+
+		<div class="container-fluid">
+			<div class="wrapper p-3" data-aos="zoom-out" data-aos-duration="2000">
+				<!-- Row 1 -->
+
+				<div class="row shadow text-center">
+					<div>
+						<h1 class="text-center p-2 fw-bold gold">Chase Full Potential</h1>
+						<p class="text-center fw-bold text-warning focus">
+							Attain financial freedom, acquire new skills, learn from the Top
+							1%. No more excuses! It’s time to work, grow, and get rich
+						</p>
+						<p class="text-center">
+							Welcome! Start your journey to a life of purpose, dedication,
+							meaningfulness, and freedom.
+						</p>
+
+						<button class="btn btn-warning">ENROLL!</button>
+					</div>
+				</div>
+
+				<!-- Row 2 -->
+				<hr />
+				<div class="row">
+					<video
+						id="video"
+						src="https://cdn.discordapp.com/attachments/1102803386283343892/1104839152085782548/introduction_v2.mp4"
+						class="img-fluid rounded mx-auto"
+						style="max-height: 300px"
+						controls
+					></video>
+				</div>
+
+
+				<!-- Slider -->
+				<%- include("components/home/slider.ejs") %>
+				<button class="btn btn-warning btn-large w-100 btn-gold fw-bold">
+					Join Now!
+				</button>
+				<!-- Row TextImg 1 -->
+				<%- include("components/home/text-img-one.ejs") %>
+
+				<!-- Row TextImg 1 -->
+				<%- include("components/home/text-img-two.ejs") %>
+
+				<!-- Row Details 1 -->
+				<%- include("components/home/details-one.ejs") %>
+
+				<!-- Row Details 2 -->
+				<%- include("components/home/details-two.ejs") %>
+
+				<!-- Row Details 3 -->
+				<%- include("components/home/details-three.ejs") %>
+
+				<!-- Row Details 4 -->
+				<%- include("components/home/details-four.ejs") %>
+
+				<!-- Row Details 5 -->
+				<%- include("components/home/details-five.ejs") %>
+
+				<!-- Row Details 6 -->
+				<%- include("components/home/details-six.ejs") %>
+
+				<hr>
+				<!-- Coaches Infos -->
+				<div class="row">
+
+				<!-- Coach 1 -->
+				<%- include("components/home/coach-one.ejs") %>
+
+				<!-- Coach 2 -->
+				<%- include("components/home/coach-two.ejs") %>
+				
+				<!-- Coach 3 -->
+				<%- include("components/home/coach-three.ejs") %>
+				
+				<!-- Coach 4 -->
+				<%- include("components/home/coach-four.ejs") %>
+				
+				<!-- Coach 5 -->
+				<%- include("components/home/coach-five.ejs") %>
+				
+				<!-- Coach 6 -->
+				<%- include("components/home/coach-six.ejs") %>
+				
+			    </div>
+				<!-- Container End -->
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<%- include("components/footer.ejs") %>
+	</body>
+</html>
