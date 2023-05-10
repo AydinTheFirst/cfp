@@ -1,7 +1,8 @@
 import express from "express";
+import { users } from "./users.router.js";
 
 export const api = express.Router();
-
+api.use("/users", users);
 api.get("/", (req, res) => {
 	res.send({ message: "True" });
 });

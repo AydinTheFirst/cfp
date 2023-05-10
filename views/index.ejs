@@ -8,51 +8,35 @@
 		<%- include("components/navbar.ejs") %>
 
 		<div class="container-fluid">
-			<div class="wrapper p-3" data-aos="zoom-out" data-aos-duration="2000">
-				<!-- Row 1 -->
+			<!-- Row 1 -->
 
-				<div class="row shadow text-center">
-					<div>
-						<h1 class="text-center p-2 fw-bold gold">Chase Full Potential</h1>
-						<p class="text-center fw-bold text-warning focus">
-							Attain financial freedom, acquire new skills, learn from the Top
-							1%. No more excuses! It’s time to work, grow, and get rich
-						</p>
-						<p class="text-center">
-							Welcome! Start your journey to a life of purpose, dedication,
-							meaningfulness, and freedom.
-						</p>
+			<div class="row shadow text-center" data-aos="fadeIn">
+				<div>
+					<h1 class="text-center p-2 fw-bold gold">Chase Full Potential</h1>
+					<p class="text-center fw-bold text-warning focus">
+						Attain financial freedom, acquire new skills, learn from the Top 1%.
+						No more excuses! It’s time to work, grow, and get rich
+					</p>
+					<p class="text-center">
+						Welcome! Start your journey to a life of purpose, dedication,
+						meaningfulness, and freedom.
+					</p>
 
-						<button class="btn btn-warning">ENROLL!</button>
-					</div>
+					<button class="btn btn-warning">ENROLL!</button>
 				</div>
-
-				<!-- Row 2 -->
-				<hr />
-				<div class="row">
-					<video
-						id="video"
-						src="https://cdn.discordapp.com/attachments/1102803386283343892/1104839152085782548/introduction_v2.mp4"
-						class="img-fluid rounded mx-auto"
-						style="max-height: 300px"
-						controls></video>
-				</div>
-
-				<!-- Slider -->
-				<%- include("components/home/slider.ejs") %>
-				<button class="btn btn-warning btn-large w-100 btn-gold fw-bold">
-					Join Now!
-				</button>
-				<!-- Row TextImg 1 -->
-				<%- include("components/home/text-img-one.ejs") %>
-
-				<!-- Row TextImg 1 -->
-				<%- include("components/home/text-img-two.ejs") %>
-				<!-- Details -->
-				<% detailsData.map((a) => {%> <%- include("components/home/details.ejs",
-				{d,i}) %> <% }) %>
-				<!-- Container End -->
 			</div>
+
+			<!-- Slider -->
+			<%- include("components/home/title.ejs", {content: "Testimonials"}) %> <%-
+			include("components/home/slider.ejs") %>
+			<button class="btn btn-warning btn-large w-100 btn-gold fw-bold">
+				Join Now!
+			</button>
+
+			<!-- Details -->
+			<%- include("components/home/title.ejs", {content: "Programs"}) %> <%
+			programsData.map((d,i) => {%> <%- include("components/home/program.ejs",
+			{d,i}) %> <% }) %>
 		</div>
 
 		<!-- Footer -->

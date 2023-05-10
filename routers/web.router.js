@@ -1,5 +1,5 @@
 import express from "express";
-import { detailsData, slideData } from "../structures/home";
+import { programsData, slideData, textImgData } from "../structures/index.js";
 
 export const web = express.Router();
 
@@ -7,6 +7,14 @@ web.get("/", (req, res) => {
 	res.render("index", {
 		title: "Home",
 		slideData,
-		detailsData,
+		programsData,
+		textImgData,
 	});
 });
+
+web.get("/login", (req, res) => {
+	res.render("login", {
+		title: "Login",
+	});
+});
+

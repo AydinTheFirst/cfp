@@ -19,7 +19,7 @@ app.use(upload.any())
 
 // Static Files
 app.use(express.static("public"));
-
+	
 // Passport
 const sessionConf = {
 	secret: process.env.secret_key,

@@ -1,11 +1,8 @@
-<hr />
-<div class="row">
-	<h1 class="text-center focus">TESTIMONIALS</h1>
+<div  class="row">
 	<div
 		id="home-slider"
 		class="carousel slide rounded p-2"
-		data-bs-ride="carousel"
-	>
+		data-bs-ride="carousel">
 		<div class="carousel-inner">
 			<% slideData.map((d,i) => {%> <%- include("../homeSlider.ejs", {d,i}) %>
 			<% }) %>
@@ -15,26 +12,22 @@
 			class="carousel-control-prev"
 			type="button"
 			data-bs-target="#home-slider"
-			data-bs-slide="prev"
-		>
+			data-bs-slide="prev">
 			<img
 				src="https://static.wixstatic.com/media/ead5dc_c2c5f55f920547cea4bc0ca27b27b212~mv2.png/v1/fill/w_248,h_454,al_c,lg_1,q_85,enc_auto/Leaves-01.png"
 				alt=""
-				width="30px"
-			/>
+				width="30px" />
 			<span class="visually-hidden">Previous</span>
 		</button>
 		<button
 			class="carousel-control-next"
 			type="button"
 			data-bs-target="#home-slider"
-			data-bs-slide="next"
-		>
+			data-bs-slide="next">
 			<img
 				src="https://static.wixstatic.com/media/ead5dc_5d84b89b55f8478cb1e77bd3b058d9ab~mv2.png/v1/fill/w_248,h_454,al_c,lg_1,q_85,enc_auto/cfo1003_logo_final-02.png"
 				alt=""
-				width="30px"
-			/>
+				width="30px" />
 			<span class="visually-hidden">Next</span>
 		</button>
 	</div>

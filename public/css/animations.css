@@ -23,29 +23,28 @@
 }
 
 .focus {
-	animation: infinite 2s focus;
+	animation: infinite 1s focus;
 }
 
 @keyframes focus {
 	0% {
-		transform: scale(0.9);
+		transform: scale(0.98);
 	}
 
 	25% {
-		transform: scale(0.95);
+		transform: scale(0.99);
 	}
 	50% {
 		transform: scale(1);
 	}
 	75% {
-		transform: scale(0.95);
+		transform: scale(0.99);
 	}
 
 	100% {
-		transform: scale(0.9);
+		transform: scale(0.98);
 	}
 }
-
 
 .rotate {
 	animation: 2s rotate infinite;

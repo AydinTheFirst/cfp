@@ -1,0 +1,35 @@
+<!-- Row 6 -->
+<div class="row mt-3" data-aos-duration="1000" data-aos="bounceInLeft">
+	<h1 class="text-center focus">
+		<p class="gold fw-bold fs-3">
+			<% d.icons.map((i) => { %>
+			<i class="<%= i %>"></i>
+			<% }) %>
+			<!-- Title -->
+			<%= d.title %>
+		</p>
+	</h1>
+	<p class="fw-bold"><%= d.description %></p>
+	<div class="col-md-5">
+		<ul class="list-unstyled">
+			<% d.checkList.map((li) => { %>
+			<li class="d-flex">
+				<i class="fa-solid fa-check text-success mt-1 mx-2"></i>
+				<p><%= li %></p>
+			</li>
+			<% }) %>
+		</ul>
+	</div>
+	<div class="col-md-7">
+		<ul class="list-unstyled">
+			<% d.numList.map((li,i) => { %>
+			<li class="d-flex">
+				<i class="fa-solid fa-<%= i+1 %> text-warning mt-2 mx-2">-</i>
+				<p><%= li %></p>
+			</li>
+			<% }) %>
+		</ul>
+
+		<button class="btn btn-warning w-100"><%= d.button %></button>
+	</div>
+</div>

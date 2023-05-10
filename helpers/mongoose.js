@@ -15,6 +15,7 @@ export const userModel = mongoose.model(
 		id: { type: String, required: true, unique: true },
 		email: { type: String, unique: true },
 		username: { type: String, unique: true },
-		password: String,
+		password: { type: String, required: true },
+		type: { type: String, default: "user" },
 	})
 );
