@@ -1,5 +1,7 @@
 :root {
 	--green-color: rgba(71, 165, 84, 0);
+	--bs-warning-rgb: 242, 211, 132;
+	--bs-btn-bg: #fff;
 }
 
 body {
@@ -7,7 +9,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 	margin: 0;
 	padding: 0;
-	background-image: url("../imgs/bg.png");
+	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlDhC7XxJcrFWc-shLuTylnrIbN1zvr5EHPA&usqp=CAU");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -16,9 +18,9 @@ body {
 }
 
 .container-fluid {
-	padding: 10px;
 	min-height: 100vh;
 }
+
 .gold {
 	background-image: linear-gradient(
 		to right,
@@ -50,10 +52,4 @@ body {
 .btn-gold:hover {
 	transform: scale(1.01);
 	color: black;
-}
-
-@media only screen and (max-width: 480px) {
-	.txt-6 {
-		font-size: 14px;
-	}
 }

@@ -5,13 +5,10 @@
 		<link rel="stylesheet" href="css/index.css" />
 	</head>
 	<body class="text-white">
-		<%- include("components/navbar.ejs") %>
-
 		<div class="container-fluid">
 
-
-			
-
-		</div>
+            <%- include("components/home/title.ejs", { content: "Programs"}) %>
+            <%- include("components/admin/program.ejs") %>
+        </div>
 	</body>
 </html>

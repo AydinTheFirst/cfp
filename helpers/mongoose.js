@@ -19,3 +19,18 @@ export const userModel = mongoose.model(
 		type: { type: String, default: "user" },
 	})
 );
+
+// User Model
+export const programComponentModel = mongoose.model(
+	"program-component",
+	new Schema({
+		id: { type: String, required: true, unique: true },
+		title: { type: String, unique: true },
+		icons: { type: Array, default: [] },
+		description: { type: String, default: "" },
+		checkList: { type: Array, default: [] },
+		numList: { type: Array, default: [] },
+		buttonLabel: { type: String, default: "" },
+		buttonHref: { type: String, default: "" },
+	})
+);

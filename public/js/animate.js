@@ -12,7 +12,7 @@ const animate = () => {
 		if (!anim) continue;
 		const windowHeight = window.innerHeight;
 		const elementTop = reveal.getBoundingClientRect().top;
-		const elementVisible = 150;
+		const elementVisible = 100;
 		if (elementTop < windowHeight - elementVisible) {
 			reveal.style.animation = `${anim}  ${duration || config.duration}ms`;
 		} else {

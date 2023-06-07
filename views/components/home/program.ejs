@@ -1,5 +1,8 @@
 <!-- Row 6 -->
-<div class="row mt-3" data-aos-duration="1000" data-aos="bounceInLeft">
+<div
+	class="row mt-5 px-3"
+	data-aos-duration="1000"
+	data-aos=" <%= i%2 == 0 ?'bounceInLeft': 'bounceInRight' %>">
 	<h1 class="text-center focus">
 		<p class="gold fw-bold fs-3">
 			<% d.icons.map((i) => { %>
@@ -9,13 +12,15 @@
 			<%= d.title %>
 		</p>
 	</h1>
-	<p class="fw-bold"><%= d.description %></p>
+	<p class="fw-bold text-break">
+		<%- d.description.replace(/\n/g, '<br />').replace(/ /g, '&nbsp;') %>
+	</p>
 	<div class="col-md-5">
 		<ul class="list-unstyled">
 			<% d.checkList.map((li) => { %>
 			<li class="d-flex">
 				<i class="fa-solid fa-check text-success mt-1 mx-2"></i>
-				<p><%= li %></p>
+				<p class="fs-6"><%= li %></p>
 			</li>
 			<% }) %>
 		</ul>
@@ -23,13 +28,15 @@
 	<div class="col-md-7">
 		<ul class="list-unstyled">
 			<% d.numList.map((li,i) => { %>
-			<li class="d-flex">
+			<li class="d-flex fs-5">
 				<i class="fa-solid fa-<%= i+1 %> text-warning mt-2 mx-2">-</i>
-				<p><%= li %></p>
+				<p class="fs-4"><%= li %></p>
 			</li>
 			<% }) %>
 		</ul>
 
-		<button class="btn btn-warning w-100"><%= d.button %></button>
+		<a href="<%= d.buttonHref %>" class="btn btn-warning w-100 fw-bold"
+			><%= d.buttonLabel %></a
+		>
 	</div>
 </div>

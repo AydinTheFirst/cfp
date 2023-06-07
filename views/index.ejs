@@ -8,10 +8,62 @@
 		<%- include("components/navbar.ejs") %>
 
 		<div class="container-fluid">
+			<!-- Row 1 -->
 
+			<div class="row shadow text-center" data-aos="fadeIn">
+				<div>
+					<h1 class="text-center p-2 fw-bold gold">Chase Full Potential</h1>
+					<p class="text-center fw-bold text-warning focus">
+						Attain financial freedom, acquire new skills, learn from the Top 1%.
+						No more excuses! It’s time to work, grow, and get rich
+					</p>
+					<p class="text-center">
+						Welcome! Start your journey to a life of purpose, dedication,
+						meaningfulness, and freedom.
+					</p>
 
-			
+					<button class="btn btn-warning">ENROLL!</button>
+				</div>
+			</div>
 
+			<div class="d-flex justify-content-center p-3">
+				<iframe
+					width="560"
+					height="315"
+					src="https://www.youtube.com/embed/e9dZQelULDk"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen></iframe>
+			</div>
+
+			<!-- Slider -->
+			<%- include("components/home/title.ejs", {content: "Testimonials"}) %> <%-
+			include("components/home/slider.ejs") %>
+			<button class="btn btn-warning btn-large w-100 btn-gold fw-bold">
+				Join Now!
+			</button>
+
+			<!-- Details -->
+			<%- include("components/home/title.ejs", {content: "Programs"}) %>
+			<!--  -->
+			<% programsData.map((d,i) => {%>
+			<!--  -->
+			<%- include("components/home/program.ejs", {d,i}) %>
+			<!-- -->
+			<% }) %>
+
+			<!-- Details -->
+			<%- include("components/home/title.ejs", {content: "Professors"}) %>
+			<!--  -->
+			<% cardData.map((d,i) => {%>
+			<!--  -->
+			<%- include("components/home/card.ejs", {d,i}) %>
+			<!-- -->
+			<% }) %>
 		</div>
+
+		<!-- Footer -->
+		<%- include("components/footer.ejs") %>
 	</body>
 </html>

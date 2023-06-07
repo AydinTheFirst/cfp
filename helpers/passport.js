@@ -31,7 +31,7 @@ export const isAuthenticated = (req, res, next) => {
 };
 
 export const isAdmin = (req, res, next) => {
-	if (req.isAuthenticated() && req.user.isAdmin) {
+	if (req.isAuthenticated() && req.user.type === "admin") {
 		return next();
 	}
 

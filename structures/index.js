@@ -115,9 +115,9 @@ export const programsData = [
 	},
 ];
 
-export const textImgData = [
+export const cardData = [
 	{
-		title: "",
+		title: "safsafas",
 		side: "right",
 		description: `
 		It’s time to set yourself apart from everyone else. 
@@ -127,13 +127,6 @@ export const textImgData = [
 		That’s because our 1% course includes:
 		`,
 		image:
-			"https://cdn.discordapp.com/attachments/1102803386283343892/1104837632321659021/About_Chase.png",
-	},
-	{
-		title: "What is Chase Full Potential?",
-		side: "left",
-		description: "",
-		image:
-			"https://cdn.discordapp.com/attachments/1102803386283343892/1104837632321659021/About_Chase.png",
+			"https://static.wixstatic.com/media/ead5dc_cde0ea396dad4f27825d7a479d0b17cb~mv2.jpg/v1/fill/w_610,h_701,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ead5dc_cde0ea396dad4f27825d7a479d0b17cb~mv2.jpg",
 	},
 ];
