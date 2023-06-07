@@ -1,6 +1,9 @@
 import express from "express";
 import { v4 } from "uuid";
-import { programComponentModel } from "../helpers/mongoose.js";
+import {
+	profComponentModel,
+	programComponentModel,
+} from "../helpers/mongoose.js";
 
 export const comp = express.Router();
 
@@ -8,37 +11,68 @@ comp.get("/", (req, res) => {
 	res.send({ message: "True" });
 });
 
-comp.all("/", async (req, res) => {
+comp.get("/:id", async (req, res) => {
+	const id = req.params.id;
 	const q = req.query.q;
-	const { body, method } = req;
 	let msg = {};
 
-	if (body.type == "program") {
-		if (method === "POST") {
-			body.id = v4();
-			msg = await programComponentModel.create(body);
-		} else if (method === "PUT") {
-			const model = await programComponentModel.findOne({ id: body.id });
-			Object.assign(model, body);
-			msg = await model.save();
-		}
+	if (q == "program") {
+		msg = await programComponentModel.findOne({
+			id,
+		});
+	} else if (q == "prof") {
+		msg = await profComponentModel.findOne({
+			id,
+		});
 	}
 
 	res.send(msg);
 });
 
-comp.all("/:id", async (req, res) => {
-	const q = req.query.q;
-	const id = req.params.id;
-	const { body, method } = req;
+comp.post("/", async (req, res) => {
+	const { body } = req;
 	let msg = {};
 
-	if (method === "GET") {
-		if (q == "program") {
-			msg = await programComponentModel.findOne({
-				id,
-			});
-		}
+	if (body.type == "program") {
+		body.id = v4();
+		msg = await programComponentModel.create(body);
+	} else if (body.type === "prof") {
+		body.id = v4();
+		msg = await profComponentModel.create(body);
+	}
+
+	res.send(msg);
+});
+
+comp.put("/:id", async (req, res) => {
+	const id = req.params.id;
+	const { body } = req;
+	let msg = {};
+
+	if (body.type == "program") {
+		const model = await programComponentModel.findOne({ id });
+		Object.assign(model, body);
+		msg = await model.save();
+	} else if (body.type === "prof") {
+		const model = await profComponentModel.findOne({ id });
+		Object.assign(model, body);
+		msg = await model.save();
+	}
+
+	res.send(msg);
+});
+
+comp.delete("/:id", async (req, res) => {
+	const id = req.params.id;
+	const { body } = req;
+	let msg = {};
+
+	if (body.type == "program") {
+		const model = await programComponentModel.findOne({ id });
+		msg = model.deleteOne();
+	} else if (body.type == "prof") {
+		const model = await profComponentModel.findOne({ id });
+		msg = model.deleteOne();
 	}
 
 	res.send(msg);

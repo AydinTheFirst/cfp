@@ -31,9 +31,12 @@ export const isAuthenticated = (req, res, next) => {
 };
 
 export const isAdmin = (req, res, next) => {
-	if (req.isAuthenticated() && req.user.type === "admin") {
-		return next();
+	console.log(req.user);
+	if (req.method === "GET") {
+		next();
+	} else if (req.user.type === "admin") {
+		next();
+	} else {
+		return res.sendStatus(401);
 	}
-
-	return res.status(401).json({ message: "Forbidden" });
 };

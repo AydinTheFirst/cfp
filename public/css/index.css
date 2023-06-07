@@ -9,9 +9,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 	margin: 0;
 	padding: 0;
-	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlDhC7XxJcrFWc-shLuTylnrIbN1zvr5EHPA&usqp=CAU");
-	background-size: cover;
-	background-repeat: no-repeat;
+	background-image: url("https://w0.peakpx.com/wallpaper/36/34/HD-wallpaper-black-leather-leather-texture-black-background.jpg");
 	background-position: center;
 	min-height: 100vh;
 	overflow-x: hidden;
@@ -35,6 +33,10 @@ body {
 	color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;
+}
+
+.btn-warning {
+	background-color: rgb(242, 211, 132);
 }
 .btn-gold {
 	background-image: linear-gradient(

@@ -12,15 +12,19 @@
 
 			<div class="row shadow text-center" data-aos="fadeIn">
 				<div>
-					<h1 class="text-center p-2 fw-bold gold">Chase Full Potential</h1>
-					<p class="text-center fw-bold text-warning focus">
-						Attain financial freedom, acquire new skills, learn from the Top 1%.
-						No more excuses! It’s time to work, grow, and get rich
-					</p>
-					<p class="text-center">
-						Welcome! Start your journey to a life of purpose, dedication,
-						meaningfulness, and freedom.
-					</p>
+					<div class="text-center">
+						<h1 class="p-2 fw-bold gold">Chase Full Potential</h1>
+						<p class="fw-bold text-warning focus">
+							Attain financial freedom, acquire new skills, learn from the Top
+							1%. No more excuses! It’s time to work, grow, and get rich
+						</p>
+
+						<h3 class="mb-3 fw-bold focus">
+							Start Making
+							<span class="text-warning"> $750+ </span>
+							Today!
+						</h3>
+					</div>
 
 					<button class="btn btn-warning">ENROLL!</button>
 				</div>
@@ -28,39 +32,123 @@
 
 			<div class="d-flex justify-content-center p-3">
 				<iframe
-					width="560"
-					height="315"
-					src="https://www.youtube.com/embed/e9dZQelULDk"
-					title="YouTube video player"
+					class="sproutvideo-player"
+					src="https://videos.sproutvideo.com/embed/a79fdbb61711e3c62e/024bdb446a255fcc"
 					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					allowfullscreen></iframe>
+					height="400"
+					allowfullscreen
+					referrerpolicy="no-referrer-when-downgrade"
+					title="Video Player"
+					style="
+						aspect-ratio: 4/3;
+						object-fit: contain;
+						width: 100%;
+						background: none;
+					"></iframe>
+			</div>
+
+			<div
+				class="row text-center rounded mx-1 p-3 fs-4 fw-bold border border-3 border-warning bg-black">
+				<div class="col-md-6 text-danger">
+					<h2 class="text-center">Other Courses</h2>
+					<hr class="border-5" />
+					<ul class="list-unstyled">
+						<li><i class="fa-solid fa-xmark mx-1"></i>No community</li>
+						<li>
+							<i class="fa-solid fa-xmark mx-1"></i>Charges thousand + dollars
+						</li>
+						<li><i class="fa-solid fa-xmark mx-1"></i>Don't make money</li>
+					</ul>
+				</div>
+
+				<div class="col-md-6 text-success">
+					<h2 class="text-center">Chase Full Potential</h2>
+					<hr class="border-5" />
+					<ul class="list-unstyled">
+						<li>
+							<i class="fa-solid fa-check mx-2"></i>Chase Full Potential great
+							investment
+						</li>
+						<li><i class="fa-solid fa-check mx-2"></i>24/7 support</li>
+						<li>
+							<i class="fa-solid fa-check mx-2"></i>Making money is guaranteed
+						</li>
+						<li>
+							<i class="fa-solid fa-check mx-2"></i>Certified millionaire
+							coaches
+						</li>
+						<li><i class="fa-solid fa-check mx-2"></i>Supportive community</li>
+					</ul>
+				</div>
+				<style>
+					ul.list-unstyled {
+						margin: 0;
+						padding: 0;
+					}
+
+					ul.list-unstyled li {
+						margin: 10px 0;
+					}
+				</style>
 			</div>
 
 			<!-- Slider -->
-			<%- include("components/home/title.ejs", {content: "Testimonials"}) %> <%-
-			include("components/home/slider.ejs") %>
+			<%- include("components/title.ejs", {title: "Testimonials", id:
+			"testimonials"}) %> <%- include("components/home/slider.ejs") %>
 			<button class="btn btn-warning btn-large w-100 btn-gold fw-bold">
 				Join Now!
 			</button>
 
 			<!-- Details -->
-			<%- include("components/home/title.ejs", {content: "Programs"}) %>
+			<%- include("components/title.ejs", {title: "Programs", id: "programs"})
+			%>
 			<!--  -->
-			<% programsData.map((d,i) => {%>
+			<% programs.map((d,i) => {%>
 			<!--  -->
 			<%- include("components/home/program.ejs", {d,i}) %>
 			<!-- -->
 			<% }) %>
 
 			<!-- Details -->
-			<%- include("components/home/title.ejs", {content: "Professors"}) %>
+			<%- include("components/title.ejs", { title: "Meet The Professors", id:
+			"professors" }) %>
 			<!--  -->
-			<% cardData.map((d,i) => {%>
+			<% profs.map((d,i) => {%>
 			<!--  -->
 			<%- include("components/home/card.ejs", {d,i}) %>
 			<!-- -->
 			<% }) %>
+
+			<!-- 
+				Affilate Links
+			 -->
+			<!-- Details -->
+			<%- include("components/title.ejs", {title: "Affilate Program",
+			id:"affilate"}) %>
+			<!--  -->
+			<%- include("components/home/affilate.ejs") %>
+
+			<!-- Details -->
+			<%- include("components/title.ejs", {title: "Videos", id:"videos"}) %>
+			<!--  -->
+			<div class="row">
+				<% slideVidData.map((v,i) => { %>
+				<!--  -->
+				<div
+					class="col-12 d-flex justify-content-center"
+					style="
+						position: sticky;
+						top: 50px;
+					">
+					<video
+						src="<%= v %>"
+						class="rounded"
+						controls
+						style="object-fit: contain; width: 300px"></video>
+				</div>
+
+				<% }) %>
+			</div>
 		</div>
 
 		<!-- Footer -->

@@ -6,9 +6,10 @@
 	</head>
 	<body class="text-white">
 		<div class="container-fluid">
-
-            <%- include("components/home/title.ejs", { content: "Programs"}) %>
-            <%- include("components/admin/program.ejs") %>
-        </div>
+			<%- include("components/title.ejs", { title: "Programs", id:"programs"})
+			%> <%- include("components/admin/program.ejs") %> <%-
+			include("components/title.ejs", { title: "Profs", id:"profs"}) %> <%-
+			include("components/admin/prof.ejs") %>
+		</div>
 	</body>
 </html>

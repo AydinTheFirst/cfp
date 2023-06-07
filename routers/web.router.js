@@ -1,15 +1,20 @@
 import express from "express";
-import { programComponentModel } from "../helpers/mongoose.js";
-import { cardData, slideData } from "../structures/index.js";
+import {
+	profComponentModel,
+	programComponentModel,
+} from "../helpers/mongoose.js";
+import { slideData, slideVidData } from "../structures/index.js";
 
 export const web = express.Router();
 web.get("/", async (req, res) => {
-	const programsData = await programComponentModel.find();
+	const programs = await programComponentModel.find();
+	const profs = await profComponentModel.find();
 	res.render("index", {
 		title: "Home",
 		slideData,
-		programsData,
-		cardData
+		slideVidData,
+		programs,
+		profs,
 	});
 });
 
@@ -21,9 +26,12 @@ web.get("/login", (req, res) => {
 });
 
 web.get("/admin", async (req, res) => {
+	if (req.user?.type !== "admin") return res.redirect("/login");
 	const programs = await programComponentModel.find();
+	const profs = await profComponentModel.find();
 	res.render("admin", {
 		title: "Admin",
 		programs,
+		profs,
 	});
 });

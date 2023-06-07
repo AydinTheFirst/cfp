@@ -81,9 +81,9 @@
 	<script>
 		const form = document.getElementById("createProgram");
 
-        const createProgram = () => {
-            form.classList.toggle("d-none")
-        };
+		const createProgram = () => {
+			form.classList.toggle("d-none");
+		};
 
 		const editProgram = async (id) => {
 			const req = await fetch(`/api/components/${id}?q=program`);
@@ -98,7 +98,7 @@
 				e.value = field;
 			}
 
-            form.classList.remove("d-none")
+			form.classList.remove("d-none");
 		};
 		form.addEventListener("submit", async (e) => {
 			e.preventDefault();
@@ -116,7 +116,11 @@
 			data.numList = data.numList.split("\n");
 			data.checkList = data.checkList.split("\n");
 
-			const req = await fetch("/api/components", {
+			const href =
+				method === "post"
+					? `/api/components`
+					: `/api/components/${formData.get("id")}`;
+			const req = await fetch(href, {
 				method: method,
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(data),

@@ -34,3 +34,15 @@ export const programComponentModel = mongoose.model(
 		buttonHref: { type: String, default: "" },
 	})
 );
+
+// User Model
+export const profComponentModel = mongoose.model(
+	"prof-component",
+	new Schema({
+		id: { type: String, required: true, unique: true },
+		title: { type: String, unique: true },
+		description: { type: String, default: "" },
+		image: { type: String, default: ""},
+	})
+);
+
